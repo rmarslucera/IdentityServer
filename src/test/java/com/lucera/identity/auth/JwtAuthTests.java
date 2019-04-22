@@ -33,7 +33,7 @@ public class JwtAuthTests {
 	@Test
     public void testCreateToken() {
 			
-		String token = provider.generateJwtToken(Constants.getAuth());
+		String token = provider.generateJwtToken(Utils.getAuth());
 		
 		assertThat(token).isNotNull();
 
@@ -41,7 +41,7 @@ public class JwtAuthTests {
 	
 	@Test
     public void validateToken() {
-		String token = provider.generateJwtToken(Constants.getAuth());
+		String token = provider.generateJwtToken(Utils.getAuth());
 		
 		assertThat(token).isNotNull();
 		
@@ -51,7 +51,7 @@ public class JwtAuthTests {
 	
 	@Test
     public void validateClaims() {
-		String token = provider.generateJwtToken(Constants.getAuth());
+		String token = provider.generateJwtToken(Utils.getAuth());
 		
 		assertThat(token).isNotNull();
 
@@ -72,14 +72,14 @@ public class JwtAuthTests {
 	
 	@Test
     public void validateUserName() {
-		String token = provider.generateJwtToken(Constants.getAuth());
+		String token = provider.generateJwtToken(Utils.getAuth());
 		
 		assertThat(token).isNotNull();
 
 		String userName = provider.getUserNameFromJwtToken(token);
 		
 		assertThat(userName).isNotNull();
-		assertThat(userName).isEqualTo(Constants.getUser().getUsername());
+		assertThat(userName).isEqualTo(Utils.getUser().getUsername());
 		
 	
 	}

@@ -1,0 +1,2 @@
+INSERT INTO users( email, name, password, username) VALUES ('jb1234@email.com', 'Joe Blow', '$2a$10$v9FTOsagyd0WP6Gk94ldCeWyAHD7fGY9B4fF1uHrMkk1aRNO5ufWC', 'jb1234');
+INSERT INTO user_roles( user_id, role_id) VALUES (1, 1);

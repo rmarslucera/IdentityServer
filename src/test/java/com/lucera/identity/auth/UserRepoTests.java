@@ -53,8 +53,8 @@ public class UserRepoTests {
 		assertThat(repository.existsByUsername(USER_NAME)).isTrue();
 	}
 	
-	private void createUser() {
+	public void createUser() {
 				
-		this.entityManager.persist(Constants.getUser());
+		this.entityManager.persist(Utils.getUser());
 	}
 }

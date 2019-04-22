@@ -15,7 +15,7 @@ import com.lucera.identity.auth.model.RoleName;
 import com.lucera.identity.auth.model.User;
 import com.lucera.identity.auth.security.services.UserPrinciple;
 
-public class Constants {
+public class Utils {
 	
 	private static String NAME = "Joe Blow";
 	private static String USER_NAME="jb1234";

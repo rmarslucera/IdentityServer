@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.lucera.identity.auth.message.request.LoginForm;
 import com.lucera.identity.auth.message.request.SignUpForm;
 import com.lucera.identity.auth.model.Role;
@@ -47,6 +48,9 @@ public class AuthController {
 
     @Autowired
     JwtProvider jwtProvider;
+    
+    @Autowired
+    private Gson gson;
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
@@ -113,8 +117,8 @@ public class AuthController {
         });
         
         user.setRoles(roles);
-        userRepository.save(user);
+        User updatedUser = userRepository.save(user);
 
-        return ResponseEntity.ok().body("User registered successfully!");
+        return ResponseEntity.ok().body(gson.toJson(updatedUser));
     }
 }

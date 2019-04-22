@@ -1,0 +1,1 @@
+UPDATE public.user_roles SET role_id=3 WHERE user_id=1;
